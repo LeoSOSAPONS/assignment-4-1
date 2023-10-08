@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5th javascript assignmnet</title>
+  </head>
+  <body>
+    <input type="number" id="num1" value="0" />
+    <input type="number" id="num2" value="0" />
+
+    <button id="add">Addition</button>
+    <button id="sub">Subtraction</button>
+    <button id="mult">Multiplication</button>
+    <button id="div">Division</button>
+
+    <p>Result: <span id="result"></span></p>
+    <script>
+      const num1Input = document.getElementById("num1");
+      const num2Input = document.getElementById("num2");
+      const addButton = document.getElementById("add");
+      const subButton = document.getElementById("sub");
+      const multButton = document.getElementById("mult");
+      const divButton = document.getElementById("div");
+      const resultSpan = document.getElementById("result");
+
+      addButton.addEventListener("click", function () {
+        const num1 = parseInt(num1Input.value);
+        const num2 = parseInt(num2Input.value);
+        const result = num1 + num2;
+        resultSpan.textContent = result;
+      });
+      subButton.addEventListener("click", function () {
+        const num1 = parseInt(num1Input.value);
+        const num2 = parseInt(num2Input.value);
+        const result = num1 - num2;
+        resultSpan.textContent = result;
+      });
+
+      multButton.addEventListener("click", function () {
+        const num1 = parseInt(num1Input.value);
+        const num2 = parseInt(num2Input.value);
+        const result = num1 * num2;
+        resultSpan.textContent = result;
+      });
+
+      divButton.addEventListener("click", function () {
+        const num1 = parseFloat(num1Input.value);
+        const num2 = parseFloat(num2Input.value);
+        if (num2 !== 0) {
+          const result = num1 / num2;
+          resultSpan.textContent = result;
+        } else {
+          resultSpan.textContent = "Cannot divide by zero";
+        }
+      });
+    </script>
+  </body>
+</html>
